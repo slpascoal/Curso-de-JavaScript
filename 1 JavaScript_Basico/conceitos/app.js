@@ -42,7 +42,6 @@ function criaPessoa(nome, idade) {
         
         fala() {
             console.log(`Sou uma pessoa, meu nome é ${this.nome} e tenho ${this.idade} anos`)
-            console.log('*')
         }
     };
 }
@@ -70,7 +69,6 @@ console.log('*funções')
 console.log(minhaSoma)
 console.log('-----------------')
 console.log('*objeto')
-console.log(pessoa1.fala())
-console.log('**')
-console.log(pessoa2.fala())
+pessoa1.fala()
+pessoa2.fala()
 console.log('-----------------')
