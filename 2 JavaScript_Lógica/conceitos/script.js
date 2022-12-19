@@ -95,6 +95,48 @@ function atribuicaoObjeto(){
     console.log(nome,idade)
 }
 
+//for
+function lacofor(x){ 
+    for(let i = 0; i<=x; i++){
+        console.log(i)
+    }
+}
+
+//For in
+function forin(){
+    let frutas = ['maça', 'uva', 'abacaxi']
+
+    for(let i in frutas){
+        console.log(frutas[i])
+    }
+}
+
+// For of - Estrutura de repetição
+function forof(){
+    let nome = 'Silas'
+
+    for(let i of nome){
+        console.log(i)
+    }
+}
+
+//While e Do While - Estrutura de repetição
+function dowhile(){
+    function random(min,max){
+        const r = Math.random() * (max-min) + min
+        return Math.floor(r)
+    }
+
+    let min = 1
+    let max = 10
+    let rand = random(min,max)
+    
+    while(rand !== 9){
+        rand = random(min,max)
+        console.log(rand)
+    }
+}
+
 //resultados dos conceitos
 console.log(`* operadores de comparação`)
 console.log(comparacao(2,3))
@@ -122,4 +164,16 @@ atribuicaoArrays()
 console.log('------------------')
 console.log(`* Atribuição via desestruturação (Objetos)`)
 atribuicaoObjeto()
+console.log('------------------')
+console.log(`* for`)
+lacofor(5)
+console.log('------------------')
+console.log(`* for in`)
+forin()
+console.log('------------------')
+console.log(`* for of`)
+forof()
+console.log('------------------')
+console.log(`* while`)
+dowhile()
 console.log('------------------')
