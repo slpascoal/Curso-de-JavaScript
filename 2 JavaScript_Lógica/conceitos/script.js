@@ -137,6 +137,74 @@ function dowhile(){
     }
 }
 
+//Break e Continue
+function breakContinue(){
+    const numeros = [1,2,3,4,5]
+
+    for ( let numero of numeros){
+        if (numero === 2){
+            console.log('Pulei o 2')
+            continue
+        }
+
+        console.log(numero)
+
+        if(numero === 4){
+            console.log('4 encontrado, saindo...')
+            break
+        }
+    }
+}
+
+//exercicio de lógica 1 
+const ePaisagem = (largura, altura) => largura > altura 
+
+//exercicio de lógica 2
+function exercicio2(num1 = 0){
+    if(num1 > 100 || num1 < 0){
+        return 'O numero é maior que 100 ou menor que 0'
+    }else if (num1 % 3 === 0 && num1 % 5 === 0){
+        return 'FizzBuzz'
+    }else if(num1 % 3 !== 0 && num1 % 5 !== 0){
+        return num1
+    }else if(num1 % 3 === 0){
+        return 'Fizz'
+    }else if(num1 % 5 === 0){
+        return 'Buzz'
+    }else if (typeof num1 !== 'number'){
+        return NaN
+    }else {
+        return 'Insira um valor'
+    }
+}
+
+//Tratando e lançando erros (try, catch, throw)
+function soma(num1, num2){
+    if( typeof num1 !== 'number' || typeof num2 !== 'number'){
+        throw ('num1 ou num2 não são números')
+    }
+    return num1+num2
+}
+
+//setInterval e setTimeout
+function setIntervalSetTimeout(){
+    function falaOi(){
+        return 'oi'
+    }
+
+    const mensagem = setInterval(function(){
+        console.log(falaOi())
+    }, 1000)
+
+    setTimeout(function(){
+        clearInterval(mensagem)
+    }, 3000)
+
+    setTimeout(function(){
+        console.log('chega de ola')
+    },5000)
+}
+
 //resultados dos conceitos
 console.log(`* operadores de comparação`)
 console.log(comparacao(2,3))
@@ -176,4 +244,26 @@ forof()
 console.log('------------------')
 console.log(`* while`)
 dowhile()
+console.log('------------------')
+console.log(`* Break e Continue`)
+breakContinue()
+console.log('------------------')
+console.log(`* exercicio de lógica 1`)
+console.log(ePaisagem(10,50))
+console.log('------------------')
+console.log(`* exercicio de lógica 2`)
+console.log(exercicio2(1000))
+console.log('------------------')
+console.log(`* Tratando e lançando erros (try, catch, throw)`)
+try{
+    console.log(soma(1,2))
+    console.log(soma('1',2))
+}catch(error){
+    console.log(error)
+}finally{
+    console.log('**fim do tratamento de erros**')
+}
+console.log('------------------')
+console.log(`* setInterval e setTimeout`)
+console.log(setIntervalSetTimeout())
 console.log('------------------')
